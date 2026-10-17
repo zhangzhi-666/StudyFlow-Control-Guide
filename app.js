@@ -15,7 +15,7 @@
 
   function snippet(range, index) {
     return `<section class="snippet" aria-labelledby="snippet-${index}">
-      <div class="snippet-heading"><div><h2 id="snippet-${index}">${esc(range.label)}</h2><p>Program.cs · 第 ${range.start}–${range.end} 行</p></div><button class="copy-button" data-copy="${index}" aria-label="复制${esc(range.label)}代码">复制代码</button></div>
+      <div class="snippet-heading"><div><h2 id="snippet-${index}">${esc(range.label)}</h2><p>1.cs · 第 ${range.start}–${range.end} 行</p></div><button class="copy-button" data-copy="${index}" aria-label="复制${esc(range.label)}代码">复制代码</button></div>
       <div class="code-block" tabindex="0" aria-label="${esc(range.label)}源码">${source.slice(range.start - 1, range.end).map((line, offset) => `<div class="code-line"><span class="line-number" aria-hidden="true">${range.start + offset}</span><code class="line-code">${highlight(line) || '\n'}</code></div>`).join('')}</div>
     </section>`;
   }
@@ -31,7 +31,7 @@
       main.innerHTML = `<div class="page-heading"><p class="eyebrow">控件源码</p><h1 tabindex="-1">${esc(title(activeControl))}</h1><p class="lead">${esc(activeControl.description)}</p></div>${activeControl.ranges.map(snippet).join('')}`;
     } else {
       document.title = 'StudyFlow · 14 种控件源码';
-      main.innerHTML = `<div class="page-heading"><p class="eyebrow">STUDYFLOW · C# WINFORMS</p><h1 tabindex="-1">14 种控件，点开就是源码</h1><p class="lead">选择要讲解的控件，查看它在 StudyFlow 中的实际代码。</p></div><div class="control-grid">${controls.map((control, index) => `<a class="control-card" href="${link(control)}"><span class="card-number">${String(index + 1).padStart(2, '0')}</span><h2>${esc(title(control))}</h2><p>${esc(control.description)}</p><span class="card-action">查看源码 <span aria-hidden="true">→</span></span></a>`).join('')}</div>`;
+      main.innerHTML = `<div class="page-heading"><p class="eyebrow">STUDYFLOW · C# WINFORMS</p><h1 tabindex="-1">14 种控件，点开就是源码</h1><p class="lead">对应简化版 1.cs（${source.length} 行），选择控件即可查看源码。</p></div><div class="control-grid">${controls.map((control, index) => `<a class="control-card" href="${link(control)}"><span class="card-number">${String(index + 1).padStart(2, '0')}</span><h2>${esc(title(control))}</h2><p>${esc(control.description)}</p><span class="card-action">查看源码 <span aria-hidden="true">→</span></span></a>`).join('')}</div>`;
     }
     window.scrollTo(0, 0);
   }

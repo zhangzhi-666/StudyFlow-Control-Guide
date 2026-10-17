@@ -10,7 +10,8 @@ for (const file of ['data/source-text.js', 'data/simple-controls.js', 'code.js']
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, {filename:file});
 }
 const w = context.window;
-const source = fs.readFileSync(path.join(root, 'source/Program.cs'));
+const source = fs.readFileSync(path.join(root, 'source/1.cs'));
+if (process.argv[2]) assert(source.equals(fs.readFileSync(process.argv[2])), 'Website source differs from the supplied local C# file');
 assert.equal(w.SF_SOURCE_TEXT, source.toString('utf8'), 'Source mirror differs from original');
 assert.equal(w.SF_SOURCE_SHA256, crypto.createHash('sha256').update(source).digest('hex'));
 const lines = w.SF_CODE.lines();
