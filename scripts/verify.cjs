@@ -42,7 +42,7 @@ for(const [number,parts] of Object.entries(w.SF_TEACHING_LINES)){
   assert(parts.every(p=>typeof p.code==='string'&&typeof p.comment==='string'));
 }
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-for(const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)){const ref=match[1];if(!ref.includes(':'))assert(fs.existsSync(path.join(root,ref)),`Missing asset ${ref}`);}
+for(const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)){const ref=match[1];if(!ref.includes(':'))assert(fs.existsSync(path.join(root,ref.split(/[?#]/)[0])),`Missing asset ${ref}`);}
 for(const file of fs.readdirSync(root)){if(file.endsWith('.js'))new vm.Script(fs.readFileSync(path.join(root,file),'utf8'),{filename:file});}
 // Highlighting must keep every character of the real source, including interpolation and quotes.
 const unescape=value=>value.replace(/<[^>]*>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&');

@@ -13,8 +13,8 @@
     'List<StudyTask>':'任务列表集合', StudyTask:'任务数据模型', LINQ:'语言集成查询',
     JSON:'数据交换格式', 'try-catch':'异常处理'
   };
-  const displayType = type => typeNames[type] ? `${type}（${typeNames[type]}）` : type;
-  const sidebarType = type => `<span class="type-english">${esc(type)}</span><span class="type-chinese">（${esc(typeNames[type])}）</span>`;
+  const displayType = type => typeNames[type] ? `${type} ${typeNames[type]}` : type;
+  const sidebarType = type => `<span class="type-english">${esc(type)}</span> <span class="type-chinese">${esc(typeNames[type])}</span>`;
   const tabLabels = {definition:'控件定义',properties:'属性初始化',layout:'界面布局',events:'事件绑定',implementation:'功能实现',related:'关联与流程'};
   const $ = selector => document.querySelector(selector);
   const byId = id => controls.find(control => control.id === id);
