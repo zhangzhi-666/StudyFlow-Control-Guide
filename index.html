@@ -4,43 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1D2B44">
-  <meta name="description" content="点击真实 StudyFlow 窗口，定位 C# WinForms 控件源码、事件与执行流程。">
-  <title>StudyFlow · C# WinForms 可视化源码答辩系统</title>
+  <meta name="description" content="14 种 C# WinForms 控件，点击即可查看 StudyFlow 项目中的对应源码。">
+  <title>StudyFlow · 14 种控件源码</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261017-zh2">
+  <link rel="stylesheet" href="style.css?v=simple14-1">
   <script defer src="data/source-text.js"></script>
-  <script defer src="data/source-index.js"></script>
-  <script defer src="data/controls.js"></script>
-  <script defer src="data/hotspots.js"></script>
-  <script defer src="data/explanations.js"></script>
-  <script defer src="data/annotations.js"></script>
-  <script defer src="data/teaching-lines.js"></script>
+  <script defer src="data/simple-controls.js?v=simple14-1"></script>
   <script defer src="code.js"></script>
-  <script defer src="app.js?v=20261017-zh2"></script>
+  <script defer src="app.js?v=simple14-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到内容</a>
   <header class="topbar">
-    <button class="icon-button mobile-menu" data-action="menu" aria-label="展开控件目录">☰</button>
-    <a class="brand" href="#/home"><span class="brand-mark"><i></i><i></i><i></i></span><strong>StudyFlow<span> / SOURCE GUIDE</span></strong></a>
-    <div class="top-actions">
-      <button class="search-launch" data-action="search"><span>⌕</span> 搜索控件、变量或方法 <kbd>Ctrl K</kbd></button>
-      <button class="plain-button" id="defenseToggle" data-action="defense" aria-pressed="false">答辩模式</button>
-      <button class="icon-button" data-action="theme" aria-label="切换深浅主题" title="切换深浅主题">◐</button>
-      <button class="icon-button" data-action="fullscreen" aria-label="全屏展示" title="全屏展示">⛶</button>
-    </div>
+    <a class="brand" href="#/controls"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>StudyFlow <span class="brand-caption">控件源码</span></a>
+    <a id="backLink" class="back-link" href="#/controls" hidden>← 全部 14 种控件</a>
   </header>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar" aria-label="主导航"></aside>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="14 种控件"><p class="nav-heading">选择控件 <span>14</span></p><nav id="controlNav"></nav></aside>
     <main id="main" tabindex="-1"></main>
   </div>
-  <dialog id="searchDialog" class="search-dialog" aria-label="搜索控件与源码">
-    <div class="search-input-row"><span>⌕</span><input id="globalSearch" type="search" placeholder="试试：添加任务、TextBox、倒计时、SaveTasks" autocomplete="off" aria-label="全局搜索"><button class="icon-button" data-action="close-search" aria-label="关闭搜索">×</button></div>
-    <div id="searchResults" role="list"></div>
-    <footer><span>搜索控件、变量、方法和功能</span><kbd>Esc 关闭</kbd></footer>
-  </dialog>
-  <div id="hotspotTooltip" class="hotspot-tooltip" role="tooltip" hidden></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <noscript>请启用 JavaScript，以使用截图热点和源码导航。</noscript>
+  <noscript>请启用 JavaScript，以查看各控件的源码。</noscript>
 </body>
 </html>
