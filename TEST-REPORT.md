@@ -37,8 +37,19 @@
 - ResetFocus 保留 focusedSeconds 会话累计；累计没有跨天持久化。
 - ProgressBar 使用 Math.Round 的默认中点取偶行为。
 
-## 尚未执行
+## 公网发布验收
 
-- GitHub 发布已获用户明确授权；仓库创建、上传和 Pages 发布结果将在公网验证后补充。
-- GitHub Pages 公网地址、真实手机设备访问：发布后再验证。
-- 不能将本机子路径测试或窄屏模拟称为公网部署成功或真实手机测试。
+2026-10-17，经用户明确授权，创建了公开仓库 [zhangzhi-666/StudyFlow-Control-Guide](https://github.com/zhangzhi-666/StudyFlow-Control-Guide)，并启用 `main` 分支根目录的 GitHub Pages，未覆盖已有仓库内容。
+
+实际网站：[https://zhangzhi-666.github.io/StudyFlow-Control-Guide/](https://zhangzhi-666.github.io/StudyFlow-Control-Guide/)。
+
+- 公网首页及 13 个核心 HTML/CSS/JS/图片/源码资源均返回 HTTP 200，SHA-256 与交付文件一致。
+- 公网浏览器逐个点击全部 41 个热点成功；倒计时详情、中文教学版、源码第195–200行定位和详情页刷新正常。
+- 14 个控件问答分组、42 个问答完整显示。
+- 390×844 窄屏首页与详情无页面水平溢出；1920×1080 页面截图检查通过。
+- 公网检查无 JavaScript 异常、无资源请求失败。
+- 源码及截图未改动，未向前端或仓库写入凭据。
+
+## 验证边界
+
+真实手机设备尚未测试；窄屏浏览器模拟不等于真实手机设备测试。原 WinForms 工程未在本任务中编译或运行。

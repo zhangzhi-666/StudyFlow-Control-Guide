@@ -97,17 +97,17 @@ node scripts/verify.cjs
 - `verify.cjs` 用于重复检查源码镜像、行号范围和数据关联；它不能代替人工阅读源码及浏览器操作。
 - 已使用独立无头 Edge 浏览器逐个点击 41 个热点，检查 52 个入口和 312 个标签页；离线模式与 `/StudyFlow-Control-Guide/` 子路径均通过。
 - 已检查 1920×1080、1440×1000、1366×768、390×844 视口；搜索、定位、复制、折叠、全屏、主题、答辩模式、返回与详情刷新均通过。未发现脚本异常或静态资源加载失败。具体范围见 `TEST-REPORT.md`。
-- GitHub Pages 尚未发布，公网及真实手机设备访问仍待发布后验证。窄屏浏览器测试不等于真实手机设备测试。
+- GitHub Pages 已发布并通过公网验证：13 个核心资源与本地逐字节一致，41 个热点逐个点击成功，14 类控件、42 个问答、源码定位及刷新正常，无脚本错误或资源失败。真实手机设备尚未测试；窄屏浏览器测试不等于真实手机设备测试。
 
 ## GitHub Pages 发布
 
-用户已明确授权创建公开仓库并发布 GitHub Pages。仓库为 [zhangzhi-666/StudyFlow-Control-Guide](https://github.com/zhangzhi-666/StudyFlow-Control-Guide)，发布分支为 `main`，目录为仓库根目录。实际部署状态可在仓库的 Settings → Pages 和 Actions 中查看。
+**已发布并验证（2026-10-17）。**网站为 [StudyFlow 源码答辩系统](https://zhangzhi-666.github.io/StudyFlow-Control-Guide/)。经用户明确授权，已创建公开仓库 [zhangzhi-666/StudyFlow-Control-Guide](https://github.com/zhangzhi-666/StudyFlow-Control-Guide)，发布分支为 `main`，目录为仓库根目录，使用 HTTPS。仓库创建前已检查，未覆盖已有仓库内容。
 
-手动发布的最少步骤：
+如需在其他仓库重新发布，最少步骤为：
 
 1. 在 GitHub 检查是否已存在 `zhangzhi-666/StudyFlow-Control-Guide`。不存在时自行创建；已存在时先确认可以使用该仓库。
 2. 将**本文件所在目录内的内容**上传到仓库根目录，使 `index.html` 位于根目录，提交到 `main`。不要额外再套一层 `StudyFlow-Control-Guide` 文件夹，也不要覆盖仓库中未经确认的现有文件。
 3. 进入仓库 **Settings → Pages**，选择 **Deploy from a branch**，分支选择 **main**、文件夹选择 **/(root)**，保存。
 4. 等 GitHub 显示部署完成后，打开其给出的实际地址，检查截图、热点、详情、源码以及详情页刷新。再用手机或窄屏视口检查布局。
 
-网站地址为 [StudyFlow-Control-Guide](https://zhangzhi-666.github.io/StudyFlow-Control-Guide/)，首次部署完成前可能暂时返回 404。无需在前端代码中填写 GitHub 密码或访问令牌。
+后续更新推送到 `main` 后，GitHub Pages 会重新发布；可在 Settings → Pages 和 Actions 查看状态。无需在前端代码中填写 GitHub 密码或访问令牌。
